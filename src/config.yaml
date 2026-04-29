@@ -1,0 +1,68 @@
+site:
+  name: High Noon Pool Care
+  site: 'https://highnoonpoolcare.com'
+  base: '/'
+  trailingSlash: false
+
+# Default SEO metadata
+metadata:
+  title:
+    default: High Noon Pool Care
+    template: '%s — High Noon Pool Care'
+  description: 'High Noon Pool Care provides professional weekly pool service, cleaning, chemical balancing, and maintenance in Corinth, Denton, Lewisville, and surrounding areas. Get a free quote today.'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: High Noon Pool Care
+    images:
+      - url: '~/assets/images/high-noon-pool-care-logo.jpeg'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    cardType: summary
+
+i18n:
+  language: en
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: false
+    postsPerPage: 6
+
+    post:
+      isEnabled: false
+      permalink: '/%slug%'
+      robots:
+        index: false
+
+    list:
+      isEnabled: false
+      pathname: 'blog'
+      robots:
+        index: false
+
+    category:
+      isEnabled: false
+      pathname: 'category'
+      robots:
+        index: false
+
+    tag:
+      isEnabled: false
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: false
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null
+
+ui:
+  theme: 'light:only'

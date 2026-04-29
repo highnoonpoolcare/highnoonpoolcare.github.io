@@ -1,0 +1,257 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Contact from '~/components/widgets/Contact.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'High Noon Pool Care | Professional Pool Service in North Texas',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Hero -->
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get a Free Quote',
+        href: '#contact',
+      },
+      {
+        text: 'Call Now: 940-222-2308',
+        href: 'tel:940-222-2308',
+      },
+    ]}
+    image={{ src: '~/assets/images/hero_pool.png', alt: 'Crystal clear swimming pool' }}
+  >
+    <Fragment slot="title">
+      Crystal Clear Pools, <span class="text-accent">Reliable Service</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Professional pool maintenance for North Texas homes. Serving Corinth, Denton, Lewisville, Highland Village, and 12 other communities.
+    </Fragment>
+  </Hero>
+
+  <!-- About Section -->
+  <Content
+    id="about"
+    tagline="About Us"
+    title="About High Noon Pool Care"
+    items={[
+      {
+        title: 'Expert Care',
+        description: 'Whether you need weekly maintenance, one-time cleaning, or green pool recovery, we handle it all with professionalism and care.',
+      },
+      {
+        title: 'Trusted by Homeowners',
+        description: "We've earned the trust of North Texas homeowners by delivering reliable service, clear communication, and honest pricing.",
+      },
+      {
+        title: 'Your Relaxation, Our Priority',
+        description: 'Your pool should be a place of relaxation, not stress. Let us handle the chemicals, filter cleaning, and weekly inspections so you can enjoy time with family and friends.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/high-noon-pool-care-logo.png',
+      alt: 'High Noon Pool Care Logo',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+        Keeping your pool crystal clear
+      </h3>
+      At High Noon Pool Care, we keep your pool crystal clear and ready to enjoy all season long.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Services Section -->
+  <Features
+    id="services"
+    tagline="Services"
+    title="Our Services"
+    subtitle="Comprehensive pool care solutions for every need"
+    items={[
+      {
+        title: 'Weekly Pool Service',
+        description: 'Regular maintenance visits to keep your pool clean and balanced. We handle water testing, chemical adjustments, and equipment checks every week.',
+        icon: 'tabler:ripple',
+      },
+      {
+        title: 'Pool Cleaning',
+        description: 'Deep cleaning of your pool including brushing, vacuuming, and skimming debris. Your pool will be sparkling clean.',
+        icon: 'tabler:wash',
+      },
+      {
+        title: 'Chemical Balancing',
+        description: 'Precise water testing and chemical adjustments to maintain the perfect pH and chlorine levels for safe, clear water.',
+        icon: 'tabler:flask',
+      },
+      {
+        title: 'Filter Cleaning',
+        description: 'Regular filter maintenance keeps your circulation system running efficiently. We clean or replace filters as needed.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Green-to-Clean Service',
+        description: "Got a green or cloudy pool? We specialize in pool recovery. We'll bring your water back to safe, clear condition.",
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'One-Time Service Visits',
+        description: 'Need a one-off cleaning or maintenance check? No problem. We offer flexible service for seasonal or occasional needs.',
+        icon: 'tabler:calendar-check',
+      },
+    ]}
+  />
+
+  <!-- Why Choose Us Section -->
+  <Features2
+    id="why-us"
+    tagline="Why Choose Us"
+    title="Why Choose High Noon Pool Care?"
+    subtitle="We go above and beyond to deliver exceptional pool care"
+    items={[
+      {
+        title: 'Reliable Scheduling',
+        description: 'We show up on time, every time. You can count on us week after week.',
+        icon: 'tabler:calendar-event',
+      },
+      {
+        title: 'Clear Communication',
+        description: "We keep you informed about your pool's condition and any service performed.",
+        icon: 'tabler:message-dots',
+      },
+      {
+        title: 'Honest Service',
+        description: 'No hidden fees or pressure sales. Just straightforward, trustworthy pool care.',
+        icon: 'tabler:heart-handshake',
+      },
+      {
+        title: 'Easy Estimates',
+        description: "Free quotes with no obligation. We'll explain exactly what you need and what it costs.",
+        icon: 'tabler:clipboard-list',
+      },
+      {
+        title: 'Local & Dependable',
+        description: "We're based right here in North Texas, serving your community for years.",
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Customer First',
+        description: 'Your satisfaction is our priority. We go the extra mile to make you happy.',
+        icon: 'tabler:star',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Service Area Section -->
+  <Features2
+    id="service-area"
+    tagline="Service Areas"
+    title="Proudly Serving North Texas"
+    subtitle="Don't see your city listed? Call us at 940-222-2308 to ask about service availability."
+    items={[
+      { title: 'Corinth', icon: 'tabler:map-pin' },
+      { title: 'Highland Village', icon: 'tabler:map-pin' },
+      { title: 'Denton', icon: 'tabler:map-pin' },
+      { title: 'Lewisville', icon: 'tabler:map-pin' },
+      { title: 'Argyle', icon: 'tabler:map-pin' },
+      { title: 'Ponder', icon: 'tabler:map-pin' },
+      { title: 'Justin', icon: 'tabler:map-pin' },
+      { title: 'Lake Dallas', icon: 'tabler:map-pin' },
+      { title: 'Hickory Creek', icon: 'tabler:map-pin' },
+      { title: 'Little Elm', icon: 'tabler:map-pin' },
+      { title: 'Shady Shores', icon: 'tabler:map-pin' },
+      { title: 'Cross Roads', icon: 'tabler:map-pin' },
+      { title: 'Oak Point', icon: 'tabler:map-pin' },
+      { title: 'Bartonville', icon: 'tabler:map-pin' },
+      { title: 'Lantana', icon: 'tabler:map-pin' },
+      { title: 'Double Oak', icon: 'tabler:map-pin' },
+    ]}
+  />
+
+  <!-- Testimonials Section -->
+  <Testimonials
+    id="testimonials"
+    title="What Our Customers Say"
+    tagline="Testimonials"
+    testimonials={[
+      {
+        testimonial: "High Noon Pool Care has been taking care of our pool for two years now. They're always professional, show up when they say they will, and our pool has never looked better. Highly recommended!",
+        name: 'Sarah M.',
+        job: 'Lewisville, TX',
+      },
+      {
+        testimonial: 'We had a green pool and called High Noon in a panic. They came out, got us a fair estimate, and brought it back to crystal clear in no time. Great service!',
+        name: 'Michael T.',
+        job: 'Highland Village, TX',
+      },
+      {
+        testimonial: "Switched to High Noon from another company and wish we'd done it sooner. Better communication, better pricing, and our pool looks fantastic. Thank you!",
+        name: 'Jennifer K.',
+        job: 'Denton, TX',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Testimonials>
+
+  <!-- Contact Section -->
+  <Contact
+    id="contact"
+    title="Get a Free Quote or Call Today"
+    subtitle="Fill out the form below or call us directly at 940-222-2308"
+    tagline="Contact Us"
+    inputs={[
+      { type: 'text', name: 'name', label: 'Your Name', placeholder: 'Your name' },
+      { type: 'email', name: 'email', label: 'Your Email', placeholder: 'your@email.com' },
+      { type: 'tel', name: 'phone', label: 'Your Phone', placeholder: '940-555-0100' },
+    ]}
+    textarea={{ label: 'Tell us about your pool', name: 'message', placeholder: 'Describe your pool or service needs...' }}
+    button="Send Quote Request"
+    description="We typically respond within 24 hours."
+  />
+
+  <!-- Final CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Call Now: 940-222-2308',
+        href: 'tel:940-222-2308',
+      },
+      {
+        text: 'Email Us',
+        href: 'mailto:Drew@highnoonpoolcare.com',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready for a <span class="sm:whitespace-nowrap">Crystal Clear Pool?</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Contact us today for a free quote. Professional pool service you can count on.
+    </Fragment>
+  </CallToAction>
+
+</Layout>
