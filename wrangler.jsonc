@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Must match the Worker name in the Cloudflare dashboard, or Workers Builds fails.
+  "name": "highnoonpoolcare",
+  "compatibility_date": "2026-09-21",
+  // Disabled so the site is only reachable at www.highnoonpoolcare.com; the
+  // workers.dev URL would otherwise serve the whole site as indexable duplicate
+  // content. Flip to true temporarily if the custom domain ever needs debugging.
+  "workers_dev": false,
+  "assets": {
+    "directory": "./dist/",
+    // src/pages/404.astro builds to dist/404.html; serve it on unmatched routes.
+    "not_found_handling": "404-page"
+  },
+  // www only. The apex stays a proxied placeholder + Redirect Rule, so it must
+  // NOT be bound to this Worker.
+  "routes": [
+    {
+      "pattern": "www.highnoonpoolcare.com",
+      "custom_domain": true
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 site:
   name: High Noon Pool Care
-  site: 'https://highnoonpoolcare.com'
+  site: 'https://www.highnoonpoolcare.com'
   base: '/'
   trailingSlash: false
 

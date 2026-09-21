@@ -27,7 +27,7 @@ export const footerData = {
       title: 'Contact',
       links: [
         { text: '940-222-2308', href: 'tel:940-222-2308' },
-        { text: 'Drew@highnoonpoolcare.com', href: 'mailto:Drew@highnoonpoolcare.com' },
+        { text: 'info@highnoonpoolcare.com', href: 'mailto:info@highnoonpoolcare.com' },
       ],
     },
   ],
