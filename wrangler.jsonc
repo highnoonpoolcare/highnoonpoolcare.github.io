@@ -11,6 +11,11 @@
     "directory": "./dist/",
     // src/pages/404.astro builds to dist/404.html; serve it on unmatched routes.
     "not_found_handling": "404-page",
+    // Match Astro's `trailingSlash: false` in src/config.yaml. The Workers default
+    // ("auto-trailing-slash") serves folder index files at /services/, which meant
+    // every canonical tag and every sitemap URL -- all written without a trailing
+    // slash -- answered with a 307 instead of a 200.
+    "html_handling": "drop-trailing-slash",
   },
   // www only. The apex stays a proxied placeholder + Redirect Rule, so it must
   // NOT be bound to this Worker.
