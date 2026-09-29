@@ -1,38 +1,121 @@
 ---
-// LocalBusiness structured data for SEO
----
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "High Noon Pool Care",
-  "image": "https://www.highnoonpoolcare.com/assets/high-noon-pool-care-logo.jpeg",
-  "description": "Professional pool maintenance and cleaning services.",
-  "telephone": "+1-940-222-2308",
-  "email": "info@highnoonpoolcare.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Corinth",
-    "addressRegion": "TX",
-    "postalCode": "76208",
-    "addressCountry": "US"
-  },
-  "url": "https://www.highnoonpoolcare.com/",
-  "sameAs": ["https://www.facebook.com/highnoonpoolcare"],
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    "opens": "07:00",
-    "closes": "18:00"
-  },
-  "areaServed": [
-    "Corinth, TX", "Highland Village, TX", "Denton, TX", "Lewisville, TX",
-    "Argyle, TX", "Ponder, TX", "Justin, TX", "Lake Dallas, TX",
-    "Hickory Creek, TX", "Little Elm, TX", "Shady Shores, TX",
-    "Cross Roads, TX", "Oak Point, TX", "Bartonville, TX",
-    "Lantana, TX", "Double Oak, TX"
+// LocalBusiness structured data for SEO.
+//
+// The logo is imported rather than hardcoded: Astro emits hashed filenames under
+// /_astro/, so a handwritten "/assets/..." path 404s and Google silently drops
+// the image.
+import logo from '~/assets/images/high-noon-pool-care-logo.jpeg';
+
+const SITE = 'https://www.highnoonpoolcare.com';
+
+const CITIES = [
+  'Corinth',
+  'Highland Village',
+  'Denton',
+  'Lewisville',
+  'Argyle',
+  'Ponder',
+  'Justin',
+  'Lake Dallas',
+  'Hickory Creek',
+  'Little Elm',
+  'Shady Shores',
+  'Cross Roads',
+  'Oak Point',
+  'Bartonville',
+  'Lantana',
+  'Double Oak',
+];
+
+const SERVICES: Array<[string, string]> = [
+  [
+    'Weekly Pool Service',
+    'Scheduled weekly maintenance including water testing, chemical adjustment, skimming, brushing, and an equipment check.',
   ],
-  "serviceType": [
-    "Pool Cleaning", "Pool Maintenance", "Chemical Balancing",
-    "Filter Cleaning", "Pool Service"
-  ]
-})} />
+  [
+    'Pool Cleaning',
+    'Deep cleaning including brushing walls and steps, vacuuming the floor, skimming debris, and emptying baskets.',
+  ],
+  [
+    'Chemical Balancing',
+    'Water testing and chemical adjustment to hold pH, chlorine, alkalinity, and calcium hardness in range.',
+  ],
+  [
+    'Filter Cleaning',
+    'Cartridge, sand, and DE filter cleaning or replacement to keep circulation and turnover efficient.',
+  ],
+  [
+    'Green-to-Clean Pool Recovery',
+    'Recovery service for green, cloudy, or neglected pools, returning the water to safe and swimmable condition.',
+  ],
+  [
+    'One-Time Pool Service',
+    'Single-visit cleaning, water balancing, or maintenance checks for seasonal and occasional needs.',
+  ],
+];
+
+const logoUrl = new URL(logo.src, SITE).toString();
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${SITE}/#business`,
+  name: 'High Noon Pool Care',
+  image: logoUrl,
+  logo: logoUrl,
+  description:
+    'Professional weekly pool service, cleaning, chemical balancing, filter maintenance, and green-to-clean recovery for homeowners across Denton County, Texas.',
+  telephone: '+1-940-222-2308',
+  email: 'info@highnoonpoolcare.com',
+  url: `${SITE}/`,
+  priceRange: '$$',
+  currenciesAccepted: 'USD',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Corinth',
+    addressRegion: 'TX',
+    postalCode: '76208',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 33.154,
+    longitude: -97.065,
+  },
+  sameAs: ['https://www.facebook.com/highnoonpoolcare'],
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '07:00',
+      closes: '18:00',
+    },
+  ],
+  areaServed: CITIES.map((name) => ({
+    '@type': 'City',
+    name,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: name,
+      addressRegion: 'TX',
+      addressCountry: 'US',
+    },
+  })),
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Pool Services',
+    itemListElement: SERVICES.map(([name, description]) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name,
+        description,
+        provider: { '@id': `${SITE}/#business` },
+        areaServed: CITIES.map((city) => ({ '@type': 'City', name: city })),
+      },
+    })),
+  },
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

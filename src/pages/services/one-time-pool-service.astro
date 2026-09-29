@@ -1,0 +1,146 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ServiceSchema from '~/components/ServiceSchema.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'One-Time Pool Service & Seasonal Visits | North Texas',
+  description:
+    'One-time pool cleaning and maintenance visits across Denton County. No contract, no ongoing commitment. Good for vacations, home sales, and seasonal catch-up.',
+};
+---
+
+<Layout metadata={metadata}>
+  <ServiceSchema
+    slot="head"
+    name="One-Time Pool Service"
+    description="Single-visit pool cleaning, water balancing, or maintenance checks with no contract or ongoing commitment."
+    path="/services/one-time-pool-service"
+  />
+
+  <HeroText
+    title="One-Time Pool Service"
+    subtitle="Sometimes you don't need a service plan. You need someone to handle the pool once, properly."
+    callToAction={{ variant: 'primary', text: 'Get a Free Quote', href: '/#contact' }}
+    callToAction2={{ text: 'Call 940-222-2308', href: 'tel:940-222-2308' }}
+  />
+
+  <Content
+    isReversed
+    tagline="No Commitment"
+    title="A single visit, quoted up front"
+    items={[
+      {
+        title: 'No contract',
+        description:
+          'Book one visit. If you want another later, call us. We are not going to put you on a plan you did not ask for or make it awkward to stop.',
+      },
+      {
+        title: 'You know the price first',
+        description:
+          'We quote the visit before we do it. Honest pricing is most of the reason people call us back, and it matters most on a one-off job.',
+      },
+      {
+        title: 'Same work either way',
+        description:
+          'A one-time visit is not a lesser version of what we do. Testing, balancing, brushing, vacuuming, baskets, and an equipment look, same as any weekly stop.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hero_pool.png',
+      alt: 'Pool ready for use',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Flexible when you need it</h3>
+      Most of our customers are on weekly service, but plenty are not, and that is genuinely fine.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features3
+    title="When people call us once"
+    columns={3}
+    items={[
+      {
+        title: 'Before or after vacation',
+        description:
+          'A pool left alone for ten days in July often needs help. Get it handled before you go, or get it back on track when you return.',
+        icon: 'tabler:plane',
+      },
+      {
+        title: 'Selling the house',
+        description:
+          'A clear pool photographs well and removes an easy objection during a showing. Worth one visit before listing photos.',
+        icon: 'tabler:home-dollar',
+      },
+      {
+        title: 'Before a party',
+        description: 'Graduation, Fourth of July, family in town. One visit, timed so the water is right on the day.',
+        icon: 'tabler:confetti',
+      },
+      {
+        title: 'Seasonal catch-up',
+        description:
+          'Opening things up properly in spring after pollen season, or a cleanup after the fall leaf drop finishes.',
+        icon: 'tabler:calendar-repeat',
+      },
+      {
+        title: 'You do it yourself, mostly',
+        description:
+          'Plenty of owners handle their own pool and just want a professional test and correction a couple of times a season. Happy to be that.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'Second opinion',
+        description:
+          'Something is off and you want someone to look at it without signing up for anything. We will tell you what we see.',
+        icon: 'tabler:help-circle',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Common questions"
+    items={[
+      {
+        title: 'Is a one-time visit more expensive?',
+        description:
+          'Per visit, yes, somewhat. Weekly customers get better per-visit pricing because the work is predictable and the pool never falls far behind. We will tell you honestly if weekly would cost you less overall.',
+      },
+      {
+        title: 'What if my pool turns out to be green?',
+        description:
+          'Then it is a recovery job rather than a cleaning, and we will requote it before doing anything. You will not get a surprise invoice.',
+      },
+      {
+        title: 'Can I book a few visits a year?',
+        description:
+          'Yes, that is common. Some customers use us quarterly, some just at the start and end of swim season.',
+      },
+      {
+        title: 'Do you serve my area?',
+        description:
+          'We cover Corinth, Denton, Lewisville, Highland Village, Lake Dallas, and a dozen other nearby communities. If you are not sure, call and ask.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'Get a Free Quote', href: '/#contact' },
+      { text: 'Call 940-222-2308', href: 'tel:940-222-2308' },
+    ]}
+  >
+    <Fragment slot="title">Just need it handled once?</Fragment>
+    <Fragment slot="subtitle">Tell us what's going on and we'll quote the visit.</Fragment>
+  </CallToAction>
+</Layout>

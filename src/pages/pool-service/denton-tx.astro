@@ -1,0 +1,131 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Pool Service in Denton, TX | Weekly Cleaning & Maintenance',
+  description:
+    'Weekly pool service and cleaning in Denton, Texas. Mature tree cover, hard water, and heavy fall leaf drop all shape how a Denton pool needs to be maintained.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="Pool Service in Denton, TX"
+    subtitle="Weekly maintenance, cleaning, and green pool recovery for Denton homeowners, from the older neighborhoods near the square to the newer builds out toward Rayzor Ranch."
+    callToAction={{ variant: 'primary', text: 'Get a Free Quote', href: '/#contact' }}
+    callToAction2={{ text: 'Call 940-222-2308', href: 'tel:940-222-2308' }}
+  />
+
+  <Content
+    isReversed
+    tagline="Denton Pools"
+    title="Old trees and old pools"
+    items={[
+      {
+        title: 'Denton has serious tree canopy',
+        description:
+          'The established neighborhoods around the square and along the older streets are full of mature pecans, post oaks, and elms. Beautiful to live under, hard on a pool. Those trees drive the heaviest leaf load we deal with anywhere on our routes.',
+      },
+      {
+        title: 'A lot of pools here are older',
+        description:
+          'Denton has plenty of pools built in the seventies and eighties still in daily use. Older plaster is less forgiving of chemistry swings, and older equipment needs someone watching filter pressure rather than waiting for a failure.',
+      },
+      {
+        title: 'Rental turnover is real here',
+        description:
+          'With UNT and TWU in town, a fair number of Denton pools sit at rental and investment properties. Those get neglected between tenants, and we do a lot of catch-up work on them in late summer.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hero_pool.png',
+      alt: 'Backyard pool in Denton, Texas',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">We know Denton's pools</h3>
+      Denton sits at the north end of our service area, and it is one of our busiest. The mix of mature landscaping and older
+      pool construction means the pools here need steadier attention than a newer build in a bare subdivision.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features3
+    title="The Denton pool year"
+    subtitle="What actually happens to a pool here, season by season."
+    columns={2}
+    items={[
+      {
+        title: 'Spring: pollen, and lots of it',
+        description:
+          'Oak pollen coats everything in Denton from late March into May, and it lands in the pool continuously for weeks. It clogs filters fast and consumes chlorine as it breaks down. Spring is when filter pressure needs watching closely.',
+        icon: 'tabler:flower',
+      },
+      {
+        title: 'Summer: heat and chlorine demand',
+        description:
+          'Denton runs a stretch of triple-digit days most summers. Surface water gets into the nineties, chlorine burns off quickly, and evaporation concentrates the already-hard fill water. This is when weekly service earns its keep.',
+        icon: 'tabler:sun-high',
+      },
+      {
+        title: 'Fall: the big leaf drop',
+        description:
+          'Late October into December is the hardest stretch for Denton pools. Mature pecans drop heavily and all at once. Leaves left on the floor stain plaster and eat chlorine, so this is a skimming and vacuuming season more than a chemistry one.',
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'Winter: freeze nights',
+        description:
+          'Denton runs a little colder than the rest of Denton County, and we see a handful of hard freezes each winter. Pools here do not close for the season, but equipment needs freeze protection and circulation on those nights.',
+        icon: 'tabler:snowflake',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Denton pool questions"
+    items={[
+      {
+        title: 'Do you service rental and investment properties in Denton?',
+        description:
+          'Yes, and quite a few. We can bill the owner or the management company directly, and we are used to working around tenant turnover. Photo updates after each visit are available if you are not local.',
+      },
+      {
+        title: 'My pool is from the eighties. Is that a problem?',
+        description:
+          'Not at all, it just means chemistry matters more. Older plaster is more vulnerable to low pH, and older equipment benefits from someone actually checking filter pressure weekly rather than annually.',
+      },
+      {
+        title: 'How bad is the leaf problem really?',
+        description:
+          'In the older Denton neighborhoods, genuinely significant. Some customers there add a second visit during peak drop in November. We will tell you if your tree situation warrants it rather than assuming it does.',
+      },
+      {
+        title: 'What day do you come to Denton?',
+        description:
+          'We run set days on our Denton route so you get the same day each week. Call and we will tell you what is currently open.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'Get a Free Quote', href: '/#contact' },
+      { text: 'Call 940-222-2308', href: 'tel:940-222-2308' },
+    ]}
+  >
+    <Fragment slot="title">Pool service in Denton</Fragment>
+    <Fragment slot="subtitle">
+      Tell us your neighborhood and a little about the pool, and we'll get you a straight quote.
+    </Fragment>
+  </CallToAction>
+</Layout>

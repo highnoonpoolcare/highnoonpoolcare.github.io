@@ -1,0 +1,129 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Pool Service in Lake Dallas, TX | Weekly Cleaning & Repair Checks',
+  description:
+    'Weekly pool service in Lake Dallas, Texas. Wind off Lake Lewisville, older pools, and aging equipment shape what maintenance here actually needs to cover.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="Pool Service in Lake Dallas, TX"
+    subtitle="A small town right on the water, with a lot of older pools that have earned some attention. We are just up the road in Corinth."
+    callToAction={{ variant: 'primary', text: 'Get a Free Quote', href: '/#contact' }}
+    callToAction2={{ text: 'Call 940-222-2308', href: 'tel:940-222-2308' }}
+  />
+
+  <Content
+    isReversed
+    tagline="Lake Dallas Pools"
+    title="Wind, water, and older equipment"
+    items={[
+      {
+        title: 'The lake blows debris in',
+        description:
+          'Lake Dallas sits directly against Lake Lewisville, and the wind coming off open water carries dust, grass, and fine debris continuously. Pools here pick up more surface material than inland pools a few miles west.',
+      },
+      {
+        title: 'Older housing stock, older pools',
+        description:
+          'A lot of Lake Dallas homes and their pools have been here a while. That means aging plaster, older plumbing, and equipment that is often past its comfortable service life.',
+      },
+      {
+        title: 'Smaller lots, tighter access',
+        description:
+          'Access here is often narrower than in the newer subdivisions. Not a problem, just something we plan around rather than discover on the first visit.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hero_pool.png',
+      alt: 'Pool near Lake Lewisville in Lake Dallas, Texas',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Lake Dallas is a short drive for us</h3>
+      We are based in Corinth, essentially next door. Lake Dallas customers get the same quick response our home-town customers
+      do.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features3
+    title="The Lake Dallas pool year"
+    subtitle="Being on the water changes the rhythm a little."
+    columns={2}
+    items={[
+      {
+        title: 'Spring: wind-blown everything',
+        description:
+          'Spring winds off the lake are persistent, and they carry pollen and grass clippings into the water all season. Skimmer baskets here need emptying more often than the pool size alone would suggest.',
+        icon: 'tabler:wind',
+      },
+      {
+        title: 'Summer: evaporation and heavy use',
+        description:
+          'Hot, breezy, and sunny is the fastest combination for evaporation. Constant topping off with hard fill water concentrates calcium, so hardness climbs over a Lake Dallas summer.',
+        icon: 'tabler:sun-high',
+      },
+      {
+        title: 'Fall: steady, not sudden',
+        description:
+          'Leaf load here is moderate and more spread out than in Denton. The bigger fall job is usually getting older equipment checked over before the first cold snap.',
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'Winter: the freeze risk is real',
+        description:
+          'Older equipment and exposed plumbing are the two things that fail in a hard freeze, and Lake Dallas has plenty of both. Freeze prep here is not a formality.',
+        icon: 'tabler:snowflake',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Lake Dallas pool questions"
+    items={[
+      {
+        title: 'My equipment is old. Will you tell me before it fails?',
+        description:
+          'That is a big part of the value here. We watch filter pressure and pump condition every visit and tell you plainly when something is heading for trouble, so you can plan a replacement rather than react to a failure in July.',
+      },
+      {
+        title: 'Why does my skimmer basket fill so fast?',
+        description:
+          'Wind off the lake. It is the single biggest difference between a Lake Dallas pool and one a few miles inland, and it is why basket service every visit matters here.',
+      },
+      {
+        title: 'Do you handle freeze preparation?',
+        description:
+          'Yes, and we take it seriously here. We cover what needs doing before a hard front arrives and check equipment afterward.',
+      },
+      {
+        title: 'Is the water here harder than elsewhere?',
+        description:
+          'Comparable to the rest of Denton County, which is to say hard. Combined with high summer evaporation, calcium hardness needs genuine monitoring.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'Get a Free Quote', href: '/#contact' },
+      { text: 'Call 940-222-2308', href: 'tel:940-222-2308' },
+    ]}
+  >
+    <Fragment slot="title">Pool service in Lake Dallas</Fragment>
+    <Fragment slot="subtitle">We're minutes away in Corinth. Call and we'll come take a look.</Fragment>
+  </CallToAction>
+</Layout>

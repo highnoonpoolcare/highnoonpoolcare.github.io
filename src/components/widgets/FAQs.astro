@@ -16,7 +16,33 @@ const {
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
+// Emit FAQPage structured data from the same items the widget renders, so the
+// Q&A copy is machine-readable for rich results and AI answer engines. Google
+// requires the marked-up text to match what a visitor sees, which it does here
+// because both come from this one array.
+const faqEntities = items
+  .filter((item) => item?.title && item?.description)
+  .map((item) => ({
+    '@type': 'Question',
+    name: item.title,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.description,
+    },
+  }));
+
+const faqSchema =
+  faqEntities.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqEntities,
+      }
+    : null;
 ---
+
+{faqSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />

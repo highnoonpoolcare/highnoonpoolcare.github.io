@@ -1,0 +1,171 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ServiceSchema from '~/components/ServiceSchema.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Weekly Pool Service in Corinth, Denton & Lewisville, TX',
+  description:
+    'Weekly pool service for North Texas homeowners. Water testing, chemical balancing, skimming, brushing, and an equipment check on the same day every week. Serving Corinth, Denton, Lewisville, Highland Village, and Lake Dallas.',
+};
+---
+
+<Layout metadata={metadata}>
+  <ServiceSchema
+    slot="head"
+    name="Weekly Pool Service"
+    description="Scheduled weekly pool maintenance including water testing, chemical adjustment, skimming, brushing, basket service, and an equipment check."
+    path="/services/weekly-pool-service"
+  />
+
+  <HeroText
+    title="Weekly Pool Service in North Texas"
+    subtitle="Same day every week, a full water test, and a pool that's ready whenever you are. Serving Corinth, Denton, Lewisville, Highland Village, Lake Dallas, and surrounding communities."
+    callToAction={{ variant: 'primary', text: 'Get a Free Quote', href: '/#contact' }}
+    callToAction2={{ text: 'Call 940-222-2308', href: 'tel:940-222-2308' }}
+  />
+
+  <Content
+    isReversed
+    tagline="What It Is"
+    title="Consistency is what actually keeps a pool clear"
+    items={[
+      {
+        title: 'The same day, every week',
+        description:
+          'You get a set service day and we hold it. Consistency matters more than anything else in pool care, because water chemistry drifts a little every single day whether anyone is watching or not.',
+      },
+      {
+        title: 'A full test, not a glance',
+        description:
+          'Every visit includes testing for chlorine, pH, total alkalinity, and calcium hardness, with cyanuric acid checked regularly through the swim season. We adjust on the spot.',
+      },
+      {
+        title: 'You hear from us',
+        description:
+          "If something looks off, you'll know before it becomes a repair bill. No surprise invoices, no vague explanations.",
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hero_pool.png',
+      alt: 'Clean backyard swimming pool in North Texas',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Weekly service, done properly</h3>
+      A North Texas summer puts real stress on a pool. Water temperatures climb into the nineties, chlorine burns off fast
+      in direct sun, and evaporation quietly moves your chemistry around week to week. Weekly service is what keeps that from
+      turning into a green pool in August.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="What happens on every visit"
+    tagline="Our Weekly Routine"
+    items={[
+      {
+        title: 'Test and balance the water',
+        description:
+          'Chlorine, pH, alkalinity, and calcium hardness get tested and adjusted. Balanced water is what protects your plaster, your equipment, and the people swimming in it.',
+        icon: 'tabler:flask',
+      },
+      {
+        title: 'Skim, brush, and vacuum',
+        description:
+          'Surface debris comes off, walls and steps get brushed, and the floor gets vacuumed as needed. Brushing is the step most people skip, and it is the one that prevents algae from taking hold.',
+        icon: 'tabler:wash',
+      },
+      {
+        title: 'Empty the baskets',
+        description:
+          'Skimmer and pump baskets get emptied every visit. A full basket starves the pump, and a starved pump is how you end up replacing a motor.',
+        icon: 'tabler:trash',
+      },
+      {
+        title: 'Check the equipment',
+        description:
+          'Pump, filter pressure, and visible plumbing get a look every week. Catching a rising filter pressure or a weeping seal early is far cheaper than catching it late.',
+        icon: 'tabler:settings',
+      },
+    ]}
+  />
+
+  <Features3
+    title="Why homeowners hand this off"
+    subtitle="Weekly service is less about convenience than most people expect. It is mostly about cost."
+    columns={3}
+    items={[
+      {
+        title: 'Equipment lasts longer',
+        description:
+          'Unbalanced water is hard on everything it touches. Low pH eats at plaster and metal, high calcium scales your heater. Steady chemistry is the cheapest equipment protection there is.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Problems stay small',
+        description:
+          'A pool that gets looked at every seven days rarely develops an expensive problem. The gap between "slightly cloudy" and "green" is about four days in July.',
+        icon: 'tabler:alert-triangle',
+      },
+      {
+        title: 'The pool is always ready',
+        description:
+          'No scrambling the day before company comes over. The water is swimmable whenever you decide to use it, which is the entire point of owning a pool.',
+        icon: 'tabler:pool',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Common questions"
+    items={[
+      {
+        title: 'Do I need to be home?',
+        description:
+          'No. We just need gate access. Most of our weekly customers are at work when we come by and never have to think about it.',
+      },
+      {
+        title: 'Do you service year round, or just in summer?',
+        description:
+          'Year round, and we recommend it. North Texas winters are mild enough that pools never fully shut down here the way they do up north. Water still needs circulation and a baseline of chlorine through the winter, and freeze protection matters on the handful of nights it drops hard.',
+      },
+      {
+        title: 'Are chemicals included?',
+        description:
+          'Standard weekly chemicals are included in the service. Larger corrective doses, such as what a green-to-clean recovery needs, are quoted separately and always discussed before we do the work.',
+      },
+      {
+        title: 'What if it rains on my service day?',
+        description:
+          'We still come. North Texas storms tend to dump a lot of water quickly, which dilutes chemistry and blows debris in, so the visit after a storm is usually one of the more useful ones.',
+      },
+      {
+        title: 'Can I start mid-season?',
+        description:
+          'Yes. If the pool has been sitting a while, we may recommend a one-time cleaning or a green-to-clean first, so weekly service starts from a clean baseline instead of fighting a backlog.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'Get a Free Quote', href: '/#contact' },
+      { text: 'Call 940-222-2308', href: 'tel:940-222-2308' },
+    ]}
+  >
+    <Fragment slot="title">Ready to stop thinking about your pool?</Fragment>
+    <Fragment slot="subtitle">
+      Tell us where you are and a little about your pool, and we'll get you a straight answer on weekly service.
+    </Fragment>
+  </CallToAction>
+</Layout>

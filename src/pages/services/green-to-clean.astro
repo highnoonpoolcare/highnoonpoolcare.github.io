@@ -1,0 +1,149 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ServiceSchema from '~/components/ServiceSchema.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Green Pool Cleanup & Recovery in Denton County, TX',
+  description:
+    'Green, cloudy, or neglected pool? We bring North Texas pools back to clear and swimmable, then keep them that way. Serving Corinth, Denton, Lewisville, Highland Village, and Lake Dallas.',
+};
+---
+
+<Layout metadata={metadata}>
+  <ServiceSchema
+    slot="head"
+    name="Green-to-Clean Pool Recovery"
+    description="Recovery service for green, cloudy, or neglected pools, returning the water to safe, clear, swimmable condition."
+    path="/services/green-to-clean"
+  />
+
+  <HeroText
+    title="Green Pool Cleanup & Recovery"
+    subtitle="Algae blooms fast in a Texas summer. If your pool went green, it is fixable, and it usually takes days rather than weeks."
+    callToAction={{ variant: 'primary', text: 'Get a Free Quote', href: '/#contact' }}
+    callToAction2={{ text: 'Call 940-222-2308', href: 'tel:940-222-2308' }}
+  />
+
+  <Content
+    isReversed
+    tagline="Why It Happened"
+    title="A green pool is almost never your fault"
+    items={[
+      {
+        title: 'Heat outruns chlorine',
+        description:
+          'Once surface water passes the mid-eighties, chlorine demand climbs sharply. A chlorine level that was fine in May can be effectively zero by mid-July.',
+      },
+      {
+        title: 'Sun burns off your sanitizer',
+        description:
+          'Direct North Texas sun strips unstabilized chlorine within hours. If cyanuric acid has drifted too low, you are dosing a pool that cannot hold what you put in it.',
+      },
+      {
+        title: 'Storms reset your chemistry',
+        description:
+          'A heavy thunderstorm dilutes the water, drops phosphates and organic debris in, and shifts pH. Two storms in a week with a vacation in between is a very common way to come home to green.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hero_pool.png',
+      alt: 'Swimming pool restored to clear water',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">From green to swimmable</h3>
+      We see this every summer, and we are not going to lecture you about it. What matters is getting the water safe again
+      without wasting chemicals or your money.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="How recovery works"
+    tagline="The Process"
+    items={[
+      {
+        title: 'We look at it first and quote it honestly',
+        description:
+          'Some pools need a heavy shock and a few days of filtering. Some need a drain and acid wash. Those are very different jobs at very different prices, and you get told which one you have before we start.',
+        icon: 'tabler:eye-check',
+      },
+      {
+        title: 'Debris out, chemistry corrected',
+        description:
+          'Leaves and heavy debris come out first, because shocking a pool full of organic material just burns chemicals. Then we correct pH and alkalinity so the sanitizer can actually work.',
+        icon: 'tabler:trash',
+      },
+      {
+        title: 'Shock and filter',
+        description:
+          'The pool gets shocked and the filter runs hard. This is the part that takes real time. Dead algae has to be filtered out, and the filter usually needs cleaning partway through.',
+        icon: 'tabler:flask',
+      },
+      {
+        title: 'Brush, vacuum, and verify',
+        description:
+          'We brush and vacuum the settled debris, retest, and confirm the water is genuinely balanced rather than just clear. Clear and safe are not the same thing.',
+        icon: 'tabler:circle-check',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Common questions"
+    columns={2}
+    items={[
+      {
+        title: 'How long does it take?',
+        description:
+          'Most recoveries run three to five days from first visit to swimmable. A badly neglected pool, or one where the filter cannot keep up, can take longer. We will give you a realistic window up front rather than an optimistic one.',
+      },
+      {
+        title: 'Will I need to drain the pool?',
+        description:
+          'Usually not. Draining is a last resort, and in North Texas clay soil it carries real risk of the shell shifting or popping. We drain only when the water chemistry is genuinely unrecoverable, and we will explain why before recommending it.',
+      },
+      {
+        title: 'Is it safe to swim after?',
+        description:
+          'Yes, once chlorine has come back down into normal range and the water tests balanced. We tell you when, and we do not hand a pool back before it is ready.',
+      },
+      {
+        title: 'What does it cost?',
+        description:
+          'It depends on pool size and how far gone it is, which is why we quote after looking rather than over the phone. Chemical volume is the biggest variable.',
+      },
+      {
+        title: 'How do I keep it from happening again?',
+        description:
+          'Weekly service, honestly. Recovery is expensive relative to maintenance, and almost every green pool we see is one that went a few weeks without eyes on it during the hottest part of the year.',
+      },
+      {
+        title: 'Do you handle pools that have sat for months?',
+        description:
+          'Yes. Foreclosures, rentals, and inherited properties are routine for us. Those often need an equipment assessment too, since pumps and filters do not age well sitting idle.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'Get a Free Quote', href: '/#contact' },
+      { text: 'Call 940-222-2308', href: 'tel:940-222-2308' },
+    ]}
+  >
+    <Fragment slot="title">Send us a photo of the pool</Fragment>
+    <Fragment slot="subtitle">
+      A picture tells us a lot. Reach out and we'll tell you what recovery is likely to involve.
+    </Fragment>
+  </CallToAction>
+</Layout>

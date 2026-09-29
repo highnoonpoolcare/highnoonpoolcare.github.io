@@ -38,6 +38,13 @@ const { language, textDirection } = I18N;
     <SiteVerification />
     <Analytics />
 
+    {
+      /* Per-page <head> additions, e.g. a blog post's BlogPosting JSON-LD.
+        Without this named slot, anything passed as slot="head" is silently
+        discarded rather than rendered. */
+    }
+    <slot name="head" />
+
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
   </head>

@@ -1,0 +1,148 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ServiceSchema from '~/components/ServiceSchema.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Pool Chemical Balancing & Water Testing | North Texas',
+  description:
+    'Professional pool water testing and chemical balancing in Denton County. We manage chlorine, pH, alkalinity, calcium hardness, and stabilizer in hard North Texas water.',
+};
+---
+
+<Layout metadata={metadata}>
+  <ServiceSchema
+    slot="head"
+    name="Chemical Balancing"
+    description="Pool water testing and chemical adjustment for chlorine, pH, total alkalinity, calcium hardness, and cyanuric acid in hard North Texas water."
+    path="/services/chemical-balancing"
+  />
+
+  <HeroText
+    title="Water Testing & Chemical Balancing"
+    subtitle="Balanced water is what protects your plaster, your equipment, and the people swimming in it. It is also the hardest part to get right by guesswork."
+    callToAction={{ variant: 'primary', text: 'Get a Free Quote', href: '/#contact' }}
+    callToAction2={{ text: 'Call 940-222-2308', href: 'tel:940-222-2308' }}
+  />
+
+  <Content
+    isReversed
+    tagline="The Local Problem"
+    title="North Texas water is hard, and that changes everything"
+    items={[
+      {
+        title: 'High calcium hardness',
+        description:
+          'Municipal water across Denton County comes in hard. Top off a pool all summer through evaporation and calcium concentrates, which shows up as scale on tile, heater elements, and salt cells.',
+      },
+      {
+        title: 'Alkalinity drives pH',
+        description:
+          'Chase pH without fixing total alkalinity and it drifts right back within days. Alkalinity is the buffer, and getting it right is what makes pH stay put.',
+      },
+      {
+        title: 'Stabilizer creeps up',
+        description:
+          'Cyanuric acid protects chlorine from the sun, but it accumulates and does not evaporate. Too high and your chlorine goes lazy, which is why a pool can test "normal" and still turn cloudy.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hero_pool.png',
+      alt: 'Balanced, clear pool water',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Five numbers, in balance with each other</h3>
+      Pool chemistry is not five independent readings. Move one and the others respond. Most of the bad advice at the big-box
+      store comes from treating them separately.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features3
+    title="What we test and hold"
+    columns={3}
+    items={[
+      {
+        title: 'Free chlorine',
+        description:
+          'Your actual sanitizer. In peak summer heat, demand rises fast and a level that held for a week in April will not hold for three days in August.',
+        icon: 'tabler:droplet',
+      },
+      {
+        title: 'pH and total alkalinity',
+        description:
+          'Comfort and equipment protection. Low pH is corrosive to plaster, metal, and grout. High pH makes chlorine ineffective even when the level reads fine.',
+        icon: 'tabler:scale',
+      },
+      {
+        title: 'Calcium hardness',
+        description:
+          'The local troublemaker. Too high and you scale; too low and the water pulls calcium out of your plaster to compensate.',
+        icon: 'tabler:diamond',
+      },
+      {
+        title: 'Cyanuric acid',
+        description:
+          'Sunscreen for chlorine. Essential in Texas sun, but it accumulates all season and eventually needs dilution rather than more chemicals.',
+        icon: 'tabler:sun',
+      },
+      {
+        title: 'Salt level',
+        description:
+          'For saltwater pools, we verify the cell is running in range. A cell fighting bad water chemistry fails early and is expensive to replace.',
+        icon: 'tabler:salt',
+      },
+      {
+        title: 'Phosphates, when relevant',
+        description:
+          'Algae food, and it arrives with storm runoff and fill water. Worth checking when a pool keeps struggling despite chlorine testing fine.',
+        icon: 'tabler:microscope',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Common questions"
+    items={[
+      {
+        title: 'Why does my pool test fine but still look cloudy?',
+        description:
+          'Usually stabilizer that has climbed too high, high pH making chlorine ineffective, or a filter that is not turning the water over. All three test "normal" on a basic strip while the pool keeps looking wrong.',
+      },
+      {
+        title: 'Are strips good enough?',
+        description:
+          'They are fine for a rough check between visits. They are not precise enough for calcium hardness or cyanuric acid, which are exactly the two that cause the expensive problems here.',
+      },
+      {
+        title: 'Is a saltwater pool chemical free?',
+        description:
+          'No, it is chlorine generated on site rather than poured in. Salt pools still need pH, alkalinity, and calcium managed, and they tend to push pH up, so they need attention rather than less of it.',
+      },
+      {
+        title: 'Do you include chemicals?',
+        description:
+          'Standard weekly chemicals are included with weekly service. Large corrective doses get quoted separately and discussed before we do anything.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'Get a Free Quote', href: '/#contact' },
+      { text: 'Call 940-222-2308', href: 'tel:940-222-2308' },
+    ]}
+  >
+    <Fragment slot="title">Tired of guessing at the chemistry?</Fragment>
+    <Fragment slot="subtitle">Let us take the testing and dosing off your plate.</Fragment>
+  </CallToAction>
+</Layout>

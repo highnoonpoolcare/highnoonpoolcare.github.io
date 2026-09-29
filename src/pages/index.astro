@@ -16,7 +16,6 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-
   <!-- Hero -->
   <Hero
     actions={[
@@ -33,11 +32,12 @@ const metadata = {
     image={{ src: '~/assets/images/hero_pool.png', alt: 'Crystal clear swimming pool' }}
   >
     <Fragment slot="title">
-      Crystal Clear Pools, <span class="text-accent">Reliable Service</span>
+      Pool Cleaning & Weekly Service in <span class="text-accent">Denton & Surrounding Areas</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Professional pool maintenance for North Texas homes. Serving Corinth, Denton, Lewisville, Highland Village, and 12 other communities.
+      Professional pool maintenance for North Texas homes. Serving Corinth, Denton, Lewisville, Highland Village, and 12
+      other communities.
     </Fragment>
   </Hero>
 
@@ -49,15 +49,18 @@ const metadata = {
     items={[
       {
         title: 'Expert Care',
-        description: 'Whether you need weekly maintenance, one-time cleaning, or green pool recovery, we handle it all with professionalism and care.',
+        description:
+          'Whether you need weekly maintenance, one-time cleaning, or green pool recovery, we handle it all with professionalism and care.',
       },
       {
         title: 'Trusted by Homeowners',
-        description: "We've earned the trust of North Texas homeowners by delivering reliable service, clear communication, and honest pricing.",
+        description:
+          "We've earned the trust of North Texas homeowners by delivering reliable service, clear communication, and honest pricing.",
       },
       {
         title: 'Your Relaxation, Our Priority',
-        description: 'Your pool should be a place of relaxation, not stress. Let us handle the chemicals, filter cleaning, and weekly inspections so you can enjoy time with family and friends.',
+        description:
+          'Your pool should be a place of relaxation, not stress. Let us handle the chemicals, filter cleaning, and weekly inspections so you can enjoy time with family and friends.',
       },
     ]}
     image={{
@@ -66,9 +69,7 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Keeping your pool crystal clear
-      </h3>
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Keeping your pool crystal clear</h3>
       At High Noon Pool Care, we keep your pool crystal clear and ready to enjoy all season long.
     </Fragment>
 
@@ -86,32 +87,38 @@ const metadata = {
     items={[
       {
         title: 'Weekly Pool Service',
-        description: 'Regular maintenance visits to keep your pool clean and balanced. We handle water testing, chemical adjustments, and equipment checks every week.',
+        description:
+          'Regular maintenance visits to keep your pool clean and balanced. We handle water testing, chemical adjustments, and equipment checks every week.',
         icon: 'tabler:ripple',
       },
       {
         title: 'Pool Cleaning',
-        description: 'Deep cleaning of your pool including brushing, vacuuming, and skimming debris. Your pool will be sparkling clean.',
+        description:
+          'Deep cleaning of your pool including brushing, vacuuming, and skimming debris. Your pool will be sparkling clean.',
         icon: 'tabler:wash',
       },
       {
         title: 'Chemical Balancing',
-        description: 'Precise water testing and chemical adjustments to maintain the perfect pH and chlorine levels for safe, clear water.',
+        description:
+          'Precise water testing and chemical adjustments to maintain the perfect pH and chlorine levels for safe, clear water.',
         icon: 'tabler:flask',
       },
       {
         title: 'Filter Cleaning',
-        description: 'Regular filter maintenance keeps your circulation system running efficiently. We clean or replace filters as needed.',
+        description:
+          'Regular filter maintenance keeps your circulation system running efficiently. We clean or replace filters as needed.',
         icon: 'tabler:settings',
       },
       {
         title: 'Green-to-Clean Service',
-        description: "Got a green or cloudy pool? We specialize in pool recovery. We'll bring your water back to safe, clear condition.",
+        description:
+          "Got a green or cloudy pool? We specialize in pool recovery. We'll bring your water back to safe, clear condition.",
         icon: 'tabler:leaf',
       },
       {
         title: 'One-Time Service Visits',
-        description: 'Need a one-off cleaning or maintenance check? No problem. We offer flexible service for seasonal or occasional needs.',
+        description:
+          'Need a one-off cleaning or maintenance check? No problem. We offer flexible service for seasonal or occasional needs.',
         icon: 'tabler:calendar-check',
       },
     ]}
@@ -194,17 +201,20 @@ const metadata = {
     tagline="Testimonials"
     testimonials={[
       {
-        testimonial: "High Noon Pool Care has been taking care of our pool for two years now. They're always professional, show up when they say they will, and our pool has never looked better. Highly recommended!",
+        testimonial:
+          "High Noon Pool Care has been taking care of our pool for two years now. They're always professional, show up when they say they will, and our pool has never looked better. Highly recommended!",
         name: 'Sarah M.',
         job: 'Lewisville, TX',
       },
       {
-        testimonial: 'We had a green pool and called High Noon in a panic. They came out, got us a fair estimate, and brought it back to crystal clear in no time. Great service!',
+        testimonial:
+          'We had a green pool and called High Noon in a panic. They came out, got us a fair estimate, and brought it back to crystal clear in no time. Great service!',
         name: 'Michael T.',
         job: 'Highland Village, TX',
       },
       {
-        testimonial: "Switched to High Noon from another company and wish we'd done it sooner. Better communication, better pricing, and our pool looks fantastic. Thank you!",
+        testimonial:
+          "Switched to High Noon from another company and wish we'd done it sooner. Better communication, better pricing, and our pool looks fantastic. Thank you!",
         name: 'Jennifer K.',
         job: 'Denton, TX',
       },
@@ -226,7 +236,11 @@ const metadata = {
       { type: 'email', name: 'email', label: 'Your Email', placeholder: 'your@email.com' },
       { type: 'tel', name: 'phone', label: 'Your Phone', placeholder: '940-555-0100' },
     ]}
-    textarea={{ label: 'Tell us about your pool', name: 'message', placeholder: 'Describe your pool or service needs...' }}
+    textarea={{
+      label: 'Tell us about your pool',
+      name: 'message',
+      placeholder: 'Describe your pool or service needs...',
+    }}
     button="Send Quote Request"
     description="We typically respond within 24 hours."
   />
@@ -253,5 +267,4 @@ const metadata = {
       Contact us today for a free quote. Professional pool service you can count on.
     </Fragment>
   </CallToAction>
-
 </Layout>

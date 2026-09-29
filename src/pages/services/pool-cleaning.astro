@@ -1,0 +1,130 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ServiceSchema from '~/components/ServiceSchema.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Pool Cleaning Service in Corinth, Denton & Lewisville, TX',
+  description:
+    'Thorough pool cleaning for North Texas homeowners: brushing, vacuuming, skimming, and basket service. Available weekly or as a one-time deep clean.',
+};
+---
+
+<Layout metadata={metadata}>
+  <ServiceSchema
+    slot="head"
+    name="Pool Cleaning"
+    description="Deep pool cleaning including brushing walls and steps, vacuuming the floor, skimming debris, and emptying skimmer and pump baskets."
+    path="/services/pool-cleaning"
+  />
+
+  <HeroText
+    title="Pool Cleaning in North Texas"
+    subtitle="Brushing, vacuuming, skimming, and baskets, done thoroughly rather than quickly. Available as part of weekly service or as a one-time deep clean."
+    callToAction={{ variant: 'primary', text: 'Get a Free Quote', href: '/#contact' }}
+    callToAction2={{ text: 'Call 940-222-2308', href: 'tel:940-222-2308' }}
+  />
+
+  <Content
+    isReversed
+    tagline="What Gets Done"
+    title="The parts that actually matter"
+    items={[
+      {
+        title: 'Brushing walls, steps, and corners',
+        description:
+          'This is the step that gets skipped most often and matters most. Algae takes hold on surfaces before it ever clouds the water, and brushing is what stops it starting.',
+      },
+      {
+        title: 'Vacuuming the floor',
+        description:
+          'North Texas gives pools a steady diet of oak pollen in spring, cottonwood fluff in early summer, and heavy leaf drop in fall. Robotic cleaners miss corners and steps; we get those.',
+      },
+      {
+        title: 'Skimming and baskets',
+        description:
+          'Surface debris comes off before it sinks and stains. Skimmer and pump baskets get emptied, which protects the pump from running starved.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hero_pool.png',
+      alt: 'Clean swimming pool water',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Clean water starts with clean surfaces</h3>
+      Chemicals get the attention, but most clarity problems start as something physical: debris left too long, a surface
+      nobody brushed, a basket nobody emptied.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features3
+    title="When a deep clean makes sense"
+    columns={3}
+    items={[
+      {
+        title: 'After heavy leaf drop',
+        description:
+          'Late fall in Denton County drops a lot of debris fast, especially under mature oaks and pecans. Leaves left on the floor stain plaster and consume chlorine as they break down.',
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'Before guests or a listing',
+        description:
+          'A one-time clean before a party, a holiday weekend, or a home showing gets the pool looking right without signing up for anything ongoing.',
+        icon: 'tabler:calendar-event',
+      },
+      {
+        title: 'Taking over a neglected pool',
+        description:
+          'New house, rental turnover, or a pool that went unattended for a while. A thorough clean gives weekly service a clean baseline to work from.',
+        icon: 'tabler:home-move',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Common questions"
+    items={[
+      {
+        title: 'Is cleaning included in weekly service?',
+        description:
+          'Yes. Every weekly visit includes skimming, brushing, basket service, and vacuuming as needed. A separate deep clean is only for pools that have fallen behind.',
+      },
+      {
+        title: 'I have a robot cleaner. Do I still need this?',
+        description:
+          'Robots handle open floor well and steps, corners, waterline, and skimmer throats poorly. They also do not test water or notice a rising filter pressure. They are a useful supplement, not a replacement.',
+      },
+      {
+        title: 'Do you clean the waterline tile?',
+        description:
+          'Routine waterline cleaning is part of what we do. Heavy calcium scale, which is common here given how hard North Texas water is, may need a separate treatment and we will tell you if so.',
+      },
+      {
+        title: 'Can you do a one-time clean without ongoing service?',
+        description:
+          'Absolutely. Plenty of customers use us once for a specific reason. There is no obligation to sign up for anything.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'Get a Free Quote', href: '/#contact' },
+      { text: 'Call 940-222-2308', href: 'tel:940-222-2308' },
+    ]}
+  >
+    <Fragment slot="title">Want the pool looking right again?</Fragment>
+    <Fragment slot="subtitle">Tell us what you're dealing with and we'll give you a straight answer.</Fragment>
+  </CallToAction>
+</Layout>

@@ -10,14 +10,14 @@
   "assets": {
     "directory": "./dist/",
     // src/pages/404.astro builds to dist/404.html; serve it on unmatched routes.
-    "not_found_handling": "404-page"
+    "not_found_handling": "404-page",
   },
   // www only. The apex stays a proxied placeholder + Redirect Rule, so it must
   // NOT be bound to this Worker.
   "routes": [
     {
       "pattern": "www.highnoonpoolcare.com",
-      "custom_domain": true
-    }
-  ]
+      "custom_domain": true,
+    },
+  ],
 }

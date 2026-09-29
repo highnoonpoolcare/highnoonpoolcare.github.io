@@ -14,6 +14,8 @@ const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
+  {/* Forward per-page <head> content (structured data, etc.) to Layout. */}
+  <slot name="head" slot="head" />
   <slot name="header">
     <Header {...headerData} isSticky />
   </slot>

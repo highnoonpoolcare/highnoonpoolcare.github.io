@@ -17,6 +17,17 @@ export const trim = (str = '', ch?: string) => {
   return start > 0 || end < str.length ? str.substring(start, end) : str;
 };
 
+// Trim to a maximum length without cutting a word in half. Used for meta
+// descriptions, where Google truncates around 155 characters anyway.
+export const truncateAtWord = (text = '', maxLength = 155): string => {
+  if (!text || text.length <= maxLength) return text;
+
+  const truncated = text.slice(0, maxLength);
+  const lastSpace = truncated.lastIndexOf(' ');
+
+  return `${(lastSpace > 0 ? truncated.slice(0, lastSpace) : truncated).trimEnd()}…`;
+};
+
 // Function to format a number in thousands (K) or millions (M) format depending on its value
 export const toUiAmount = (amount: number) => {
   if (!amount) return 0;

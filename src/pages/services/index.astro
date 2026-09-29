@@ -1,0 +1,117 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Pool Services in Corinth, Denton & Lewisville, TX',
+  description:
+    'Weekly pool service, cleaning, chemical balancing, filter maintenance, green-to-clean recovery, and one-time visits for homeowners across Denton County, Texas.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="Pool Services in North Texas"
+    subtitle="Everything we do, from weekly maintenance to bringing a green pool back. Serving Corinth, Denton, Lewisville, Highland Village, Lake Dallas, and surrounding communities."
+    callToAction={{ variant: 'primary', text: 'Get a Free Quote', href: '/#contact' }}
+    callToAction2={{ text: 'Call 940-222-2308', href: 'tel:940-222-2308' }}
+  />
+
+  <Features3
+    title="What we do"
+    subtitle="Pick the one that matches what you need, or call and we'll figure it out with you."
+    columns={3}
+    items={[
+      {
+        title: 'Weekly Pool Service',
+        description:
+          'Same day every week: testing, chemical adjustment, skimming, brushing, baskets, and an equipment check.',
+        icon: 'tabler:ripple',
+        callToAction: { text: 'Learn more', href: '/services/weekly-pool-service' },
+      },
+      {
+        title: 'Pool Cleaning',
+        description: 'Brushing, vacuuming, skimming, and basket service. Weekly or as a one-time deep clean.',
+        icon: 'tabler:wash',
+        callToAction: { text: 'Learn more', href: '/services/pool-cleaning' },
+      },
+      {
+        title: 'Chemical Balancing',
+        description:
+          'Testing and correction for chlorine, pH, alkalinity, calcium hardness, and stabilizer in hard North Texas water.',
+        icon: 'tabler:flask',
+        callToAction: { text: 'Learn more', href: '/services/chemical-balancing' },
+      },
+      {
+        title: 'Filter Cleaning',
+        description: 'Cartridge, sand, and DE filter service, plus the equipment checks that prevent repair bills.',
+        icon: 'tabler:settings',
+        callToAction: { text: 'Learn more', href: '/services/filter-cleaning' },
+      },
+      {
+        title: 'Green-to-Clean Recovery',
+        description: 'Green, cloudy, or neglected pools brought back to clear and genuinely swimmable.',
+        icon: 'tabler:leaf',
+        callToAction: { text: 'Learn more', href: '/services/green-to-clean' },
+      },
+      {
+        title: 'One-Time Service',
+        description: 'A single visit, quoted up front, with no contract and no ongoing commitment.',
+        icon: 'tabler:calendar-check',
+        callToAction: { text: 'Learn more', href: '/services/one-time-pool-service' },
+      },
+    ]}
+  />
+
+  <Features2
+    title="Where we work"
+    subtitle="Weekly routes across Denton County and the communities around Lake Lewisville."
+    columns={3}
+    items={[
+      {
+        title: 'Corinth',
+        description: 'Our home base.',
+        callToAction: { text: 'Pool service in Corinth', href: '/pool-service/corinth-tx' },
+      },
+      {
+        title: 'Denton',
+        description: 'Including older neighborhoods near the square.',
+        callToAction: { text: 'Pool service in Denton', href: '/pool-service/denton-tx' },
+      },
+      {
+        title: 'Lewisville',
+        description: 'From Old Town out to the lake.',
+        callToAction: { text: 'Pool service in Lewisville', href: '/pool-service/lewisville-tx' },
+      },
+      {
+        title: 'Highland Village',
+        description: 'Larger lots and heavy tree cover.',
+        callToAction: { text: 'Pool service in Highland Village', href: '/pool-service/highland-village-tx' },
+      },
+      {
+        title: 'Lake Dallas',
+        description: 'Lakeside homes and older pools.',
+        callToAction: { text: 'Pool service in Lake Dallas', href: '/pool-service/lake-dallas-tx' },
+      },
+      {
+        title: 'And nearby',
+        description:
+          'Argyle, Ponder, Justin, Hickory Creek, Little Elm, Shady Shores, Cross Roads, Oak Point, Bartonville, Lantana, and Double Oak.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'Get a Free Quote', href: '/#contact' },
+      { text: 'Call 940-222-2308', href: 'tel:940-222-2308' },
+    ]}
+  >
+    <Fragment slot="title">Not sure what you need?</Fragment>
+    <Fragment slot="subtitle">Call and describe the pool. We'll tell you straight what it takes.</Fragment>
+  </CallToAction>
+</Layout>

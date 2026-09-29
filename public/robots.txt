@@ -1,2 +1,56 @@
+# High Noon Pool Care — https://www.highnoonpoolcare.com
+#
+# Everything here is public marketing content we want found and cited, so all
+# crawlers are allowed. The AI agents below are listed explicitly rather than
+# left to the wildcard: several of them are opt-out by default in the sense that
+# publishers commonly block them, and being named makes the intent unambiguous
+# if that default ever changes.
+#
+# See also /llms.txt for a structured summary of this site.
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Search engine AI surfaces
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Answer engines and assistants
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /

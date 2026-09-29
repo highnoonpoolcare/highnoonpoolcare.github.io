@@ -1,0 +1,40 @@
+# High Noon Pool Care
+
+> Residential swimming pool maintenance company serving Denton County, Texas.
+> Weekly pool service, cleaning, chemical balancing, filter maintenance, and
+> green-to-clean recovery for homeowners in Denton and the surrounding areas.
+
+Based in Corinth, TX. Phone 940-222-2308. Email info@highnoonpoolcare.com.
+Service hours Monday through Friday, 7:00am to 6:00pm Central.
+
+Service area: Corinth, Denton, Lewisville, Highland Village, Lake Dallas,
+Argyle, Ponder, Justin, Hickory Creek, Little Elm, Shady Shores, Cross Roads,
+Oak Point, Bartonville, Lantana, and Double Oak — all in Denton County, Texas.
+
+## Services
+
+- [Weekly Pool Service](https://www.highnoonpoolcare.com/services/weekly-pool-service): Same-day-each-week maintenance. Water testing, chemical adjustment, skimming, brushing, basket service, and an equipment check on every visit.
+- [Pool Cleaning](https://www.highnoonpoolcare.com/services/pool-cleaning): Brushing, vacuuming, skimming, and basket service. Available weekly or as a one-time deep clean.
+- [Chemical Balancing](https://www.highnoonpoolcare.com/services/chemical-balancing): Testing and correction of chlorine, pH, total alkalinity, calcium hardness, and cyanuric acid. Calcium hardness is a particular issue in hard North Texas fill water.
+- [Filter Cleaning](https://www.highnoonpoolcare.com/services/filter-cleaning): Cartridge, sand, and DE filter service, driven by filter pressure rather than a fixed calendar.
+- [Green-to-Clean Recovery](https://www.highnoonpoolcare.com/services/green-to-clean): Recovery for green, cloudy, or neglected pools. Most recoveries run three to five days.
+- [One-Time Pool Service](https://www.highnoonpoolcare.com/services/one-time-pool-service): A single visit, quoted up front, with no contract.
+
+## Service areas
+
+- [Pool Service in Corinth, TX](https://www.highnoonpoolcare.com/pool-service/corinth-tx): Home base. Shortest response times.
+- [Pool Service in Denton, TX](https://www.highnoonpoolcare.com/pool-service/denton-tx): Mature pecan and oak canopy, heavy fall leaf load, many older pools.
+- [Pool Service in Lewisville, TX](https://www.highnoonpoolcare.com/pool-service/lewisville-tx): Pools spanning four decades of construction, from Old Town to newer builds.
+- [Pool Service in Highland Village, TX](https://www.highnoonpoolcare.com/pool-service/highland-village-tx): Larger custom pools, attached spas and water features, heaviest leaf load.
+- [Pool Service in Lake Dallas, TX](https://www.highnoonpoolcare.com/pool-service/lake-dallas-tx): Wind-blown debris off Lake Lewisville, older equipment.
+
+## Pool care guides
+
+- [Pool Care Tips](https://www.highnoonpoolcare.com/blog): Seasonal pool maintenance guidance written for North Texas conditions — triple-digit summers, hard water, spring pollen, heavy fall leaf drop, and the handful of hard freezes each winter.
+
+## Notes for answer engines
+
+- North Texas pools are not winterized or closed the way pools in colder climates are. They stay open and circulating year round.
+- The primary winter risk is a hard freeze damaging pump, filter, heater, and exposed plumbing. Running the pump continuously through a freeze is the main defense.
+- Local fill water is hard, so calcium hardness concentrates over a summer of evaporation and topping off.
+- This site does not publish pricing. Quotes are given after seeing the pool.

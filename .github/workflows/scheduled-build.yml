@@ -1,0 +1,87 @@
+name: Weekly scheduled publish
+
+# Posts in src/data/post are dated to successive Thursdays at 08:00 America/Chicago
+# and are hidden by the publishDate gate in src/utils/blog.ts until that time passes.
+# Nothing in the repo changes when a post becomes due -- only the clock moves -- so
+# there is no git event for Workers Builds to react to. Something external has to say
+# "build now".
+#
+# That is all this workflow does. It POSTs a Cloudflare Deploy Hook, and Workers Builds
+# runs exactly the same build it runs on a push. GitHub is the alarm clock; Cloudflare
+# remains the only thing that builds and deploys.
+#
+# Deliberately NOT doing the build here: that would mean a second deploy path, a
+# long-lived Cloudflare API token stored in GitHub, and build logs split across two
+# dashboards.
+#
+# GitHub Actions cron is UTC only and does not follow DST, so both times are listed:
+#   13:00 UTC = 08:00 CDT (roughly March to November)
+#   14:00 UTC = 08:00 CST (roughly November to March)
+#
+# Running both is safe. The publishDate gate decides what is actually visible, so the
+# run that fires an hour "early" for the current offset just rebuilds and releases
+# nothing. Note that Actions cron is best effort and is often delayed by hours.
+
+on:
+  schedule:
+    - cron: '0 13 * * 4'
+    - cron: '0 14 * * 4'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  trigger-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Workers build
+        env:
+          DEPLOY_HOOK_URL: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${DEPLOY_HOOK_URL:-}" ]; then
+            echo "CLOUDFLARE_DEPLOY_HOOK_URL secret is not set."
+            echo "Create the hook in the Cloudflare dashboard under"
+            echo "Workers & Pages > highnoonpoolcare > Settings > Builds > Deploy Hooks,"
+            echo "then add the URL as a repository secret."
+            exit 1
+          fi
+
+          # The hook URL is itself the credential -- there is no auth header.
+          response=$(curl --silent --show-error --fail-with-body \
+            --request POST "$DEPLOY_HOOK_URL" \
+            --write-out '\n%{http_code}')
+
+          body=$(printf '%s' "$response" | sed '$d')
+          status=$(printf '%s' "$response" | tail -n1)
+
+          echo "HTTP $status"
+          printf '%s\n' "$body"
+
+          # Surface the build id so this run links to the Cloudflare build it started.
+          build_id=$(printf '%s' "$body" | node -e "
+            let raw = '';
+            process.stdin.on('data', (c) => (raw += c));
+            process.stdin.on('end', () => {
+              try {
+                const parsed = JSON.parse(raw);
+                process.stdout.write(parsed?.result?.build_uuid ?? '');
+              } catch {
+                process.stdout.write('');
+              }
+            });
+          ")
+
+          if [ -n "$build_id" ]; then
+            echo "Triggered Workers build: $build_id"
+            echo "### Triggered Workers build \`$build_id\`" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Build triggered, but no build_uuid in the response."
+            echo "### Build triggered" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          echo "Check build status in the Cloudflare dashboard under Settings > Builds." \
+            >> "$GITHUB_STEP_SUMMARY"

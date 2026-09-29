@@ -1,0 +1,128 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Pool Service in Corinth, TX | Weekly Cleaning & Maintenance',
+  description:
+    'Weekly pool service in Corinth, Texas. We are based here, so Corinth pools get our shortest response times and most flexible scheduling.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="Pool Service in Corinth, TX"
+    subtitle="Corinth is home. It is where we are based, which means the shortest drive, the fastest response, and the most flexibility on scheduling of anywhere we serve."
+    callToAction={{ variant: 'primary', text: 'Get a Free Quote', href: '/#contact' }}
+    callToAction2={{ text: 'Call 940-222-2308', href: 'tel:940-222-2308' }}
+  />
+
+  <Content
+    isReversed
+    tagline="Our Home Town"
+    title="We're your neighbors, not a franchise route"
+    items={[
+      {
+        title: 'Based right here',
+        description:
+          'When a Corinth customer calls about a problem, we are usually minutes away rather than an hour out. That matters most in July, when a pool can go from slightly cloudy to green over a long weekend.',
+      },
+      {
+        title: 'Mostly nineties and two-thousands builds',
+        description:
+          'Corinth grew fast along the I-35E corridor, so a lot of pools here are from that era. Equipment on those is now at the age where filter pressure and pump condition deserve real attention.',
+      },
+      {
+        title: 'Close to the lake, and it shows',
+        description:
+          'Corinth sits right up against Lake Lewisville. Wind off the water carries dust and debris into pools on the east side of town noticeably more than on the west side.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hero_pool.png',
+      alt: 'Backyard pool in Corinth, Texas',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Corinth pools, kept simple</h3>
+      Being local is not a marketing line here. It changes what we can actually do for you: tighter scheduling, quicker callbacks,
+      and an extra stop when the weather does something unusual.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features3
+    title="The Corinth pool year"
+    subtitle="Same North Texas seasons, with a few local wrinkles."
+    columns={2}
+    items={[
+      {
+        title: 'Spring: storms more than pollen',
+        description:
+          'Corinth catches the spring storm line hard. Heavy rain dilutes chemistry, drops organics in, and swings pH. The visit right after a big storm is usually the most valuable one of the month.',
+        icon: 'tabler:cloud-storm',
+      },
+      {
+        title: 'Summer: evaporation and hard fill water',
+        description:
+          'Triple-digit stretches mean topping off constantly, and Corinth fill water is hard. All that added water concentrates calcium over the season, which is why hardness needs watching here and not just chlorine.',
+        icon: 'tabler:sun-high',
+      },
+      {
+        title: 'Fall: moderate leaf load',
+        description:
+          'Newer Corinth subdivisions have lighter tree cover than Denton or Highland Village, so fall is easier here. The older sections near the original town center are a different story and need more attention.',
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'Winter: freeze protection',
+        description:
+          'A handful of hard freezes each winter, and equipment damage from those is the most expensive preventable thing that happens to local pools. Being close by means we can get to Corinth customers quickly ahead of a front.',
+        icon: 'tabler:snowflake',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Corinth pool questions"
+    items={[
+      {
+        title: 'Can you get here quickly if something goes wrong?',
+        description:
+          'Generally yes, faster than anywhere else we serve. We are based in Corinth, so an urgent look is usually a short drive rather than a rerouted day.',
+      },
+      {
+        title: 'My pool is about twenty-five years old. What should I expect?',
+        description:
+          'Equipment attention, mostly. Pumps and filters from that era are at the point where small problems appear regularly. Weekly monitoring of filter pressure catches most of them while they are still cheap.',
+      },
+      {
+        title: 'Is Corinth water really that hard?',
+        description:
+          'Hard enough that calcium hardness is a genuine maintenance factor, not a footnote. Combined with summer evaporation and constant topping off, it concentrates over a season and shows up as scale.',
+      },
+      {
+        title: 'Do you do one-time visits in Corinth?',
+        description: 'Yes. No contract required, and we quote before doing the work.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'Get a Free Quote', href: '/#contact' },
+      { text: 'Call 940-222-2308', href: 'tel:940-222-2308' },
+    ]}
+  >
+    <Fragment slot="title">Pool service in Corinth</Fragment>
+    <Fragment slot="subtitle">We're right down the road. Call and let's talk about your pool.</Fragment>
+  </CallToAction>
+</Layout>

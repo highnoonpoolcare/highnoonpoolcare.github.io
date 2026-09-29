@@ -104,9 +104,20 @@ const load = async function (): Promise<Array<Post>> {
   const posts = await getCollection('post');
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
+  const now = Date.now();
+
   const results = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
-    .filter((post) => !post.draft);
+    .filter((post) => !post.draft)
+    // Scheduled queue: a post stays invisible until its publishDate has passed.
+    // Posts are dated to successive Thursdays at 08:00 America/Chicago, and the
+    // weekly rebuild in .github/workflows/scheduled-build.yml is what actually
+    // makes them appear -- without a build, nothing changes.
+    //
+    // `astro dev` shows the whole queue so upcoming posts can be proofread before
+    // they go live. Production builds always apply the gate, so this cannot leak
+    // a scheduled post early.
+    .filter((post) => import.meta.env.DEV || post.publishDate.valueOf() <= now);
 
   return results;
 };

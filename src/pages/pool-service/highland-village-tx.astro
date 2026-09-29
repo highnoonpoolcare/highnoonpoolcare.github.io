@@ -1,0 +1,129 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Pool Service in Highland Village, TX | Weekly Maintenance',
+  description:
+    'Weekly pool service in Highland Village, Texas. Large lots, heavy tree canopy, and bigger pools with spas and water features need a different maintenance rhythm.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="Pool Service in Highland Village, TX"
+    subtitle="Bigger pools, heavier tree cover, and more equipment to look after. Highland Village pools need a bit more attention than average, and we plan for that."
+    callToAction={{ variant: 'primary', text: 'Get a Free Quote', href: '/#contact' }}
+    callToAction2={{ text: 'Call 940-222-2308', href: 'tel:940-222-2308' }}
+  />
+
+  <Content
+    isReversed
+    tagline="Highland Village Pools"
+    title="Larger pools, more moving parts"
+    items={[
+      {
+        title: 'The tree canopy is the defining factor',
+        description:
+          'Highland Village kept its mature trees when it developed, and the lots are big. Wonderful neighborhoods to live in, but the organic load landing in these pools is well above what a bare subdivision deals with.',
+      },
+      {
+        title: 'Spas, water features, and automation',
+        description:
+          'A lot of pools here have an attached spa, a waterfall or sheer descent, and an automation system running it all. More plumbing and more equipment means more places for a small problem to start.',
+      },
+      {
+        title: 'Volume changes the chemistry math',
+        description:
+          'A larger pool takes larger corrective doses and responds more slowly. Getting ahead of chemistry matters more here, because catching up on a big pool is expensive.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hero_pool.png',
+      alt: 'Large backyard pool in Highland Village, Texas',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Built for the pools out here</h3>
+      Highland Village backs onto Lake Lewisville and Copperas Branch, and the combination of mature landscaping and larger
+      custom pools makes for a genuinely different maintenance profile.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features3
+    title="The Highland Village pool year"
+    subtitle="Heavier organic load, longer seasons at both ends."
+    columns={2}
+    items={[
+      {
+        title: 'Spring: pollen plus seed drop',
+        description:
+          'The mature canopy means Highland Village gets pollen, catkins, and seed pods rather than just pollen. Filters here load up faster in spring than almost anywhere else we service.',
+        icon: 'tabler:flower',
+      },
+      {
+        title: 'Summer: heavy use and heat',
+        description:
+          'These pools get used. Bather load consumes chlorine alongside the heat, and pools with attached spas and features have more surface area losing water to evaporation.',
+        icon: 'tabler:sun-high',
+      },
+      {
+        title: 'Fall: the heaviest leaf load we see',
+        description:
+          'Between the mature oaks and the lot sizes, fall cleanup in Highland Village is substantial. Skimmer baskets fill within days, and a full basket means a starved pump.',
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'Winter: more equipment to protect',
+        description:
+          'Spas, waterfalls, and automated valves all add freeze exposure. There is more to shut down and protect ahead of a hard freeze than on a simple rectangular pool.',
+        icon: 'tabler:snowflake',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Highland Village pool questions"
+    items={[
+      {
+        title: 'Do you service pools with attached spas and water features?',
+        description:
+          'Yes. They need their own attention, since spa water heats and turns over differently and features add plumbing that can trap debris or freeze.',
+      },
+      {
+        title: 'Should I add a second weekly visit in the fall?',
+        description:
+          'Some Highland Village customers do during peak leaf drop, roughly November into early December. We will tell you honestly whether your tree cover warrants it, rather than selling it by default.',
+      },
+      {
+        title: 'Can you work with my automation system?',
+        description:
+          'We work around the common systems and will flag anything that looks misconfigured. We are a service company rather than an equipment installer, so major repairs go to a specialist, but you will hear about problems early.',
+      },
+      {
+        title: 'Is a bigger pool more expensive to service?',
+        description:
+          'Somewhat, mostly on chemical volume. We quote on the actual pool rather than a flat rate, and you know the number before we start.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'Get a Free Quote', href: '/#contact' },
+      { text: 'Call 940-222-2308', href: 'tel:940-222-2308' },
+    ]}
+  >
+    <Fragment slot="title">Pool service in Highland Village</Fragment>
+    <Fragment slot="subtitle">Tell us about the pool, the spa, and the trees. We'll quote it properly.</Fragment>
+  </CallToAction>
+</Layout>

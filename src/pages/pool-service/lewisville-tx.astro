@@ -1,0 +1,128 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Pool Service in Lewisville, TX | Weekly Cleaning & Maintenance',
+  description:
+    'Weekly pool service in Lewisville, Texas. From Old Town to the newer neighborhoods near Vista Ridge, we handle cleaning, chemistry, and green pool recovery.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="Pool Service in Lewisville, TX"
+    subtitle="Lewisville covers a lot of ground and a lot of pool types. Whether yours is a 1980s build near Old Town or a newer one out by Vista Ridge, we service it the same way."
+    callToAction={{ variant: 'primary', text: 'Get a Free Quote', href: '/#contact' }}
+    callToAction2={{ text: 'Call 940-222-2308', href: 'tel:940-222-2308' }}
+  />
+
+  <Content
+    isReversed
+    tagline="Lewisville Pools"
+    title="The most varied city we serve"
+    items={[
+      {
+        title: 'Four decades of pool construction',
+        description:
+          'Lewisville has pools from the late seventies through last year. An older plaster pool and a modern pebble finish with a variable-speed pump want genuinely different handling, and treating them identically is how people get into trouble.',
+      },
+      {
+        title: 'Lake Park and the western edge',
+        description:
+          'Homes toward Lake Lewisville and Lake Park catch wind and debris off the water, much like Lake Dallas does. Inland Lewisville neighborhoods are noticeably calmer.',
+      },
+      {
+        title: 'HOA neighborhoods with expectations',
+        description:
+          'A good portion of Lewisville sits in HOA communities where an unkempt pool gets noticed. Consistent weekly service keeps that from ever being a conversation.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hero_pool.png',
+      alt: 'Backyard pool in Lewisville, Texas',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">One city, many kinds of pool</h3>
+      Lewisville is the southern end of our service area and the most varied. We quote on what your pool actually is rather
+      than on a flat city rate.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features3
+    title="The Lewisville pool year"
+    subtitle="A little warmer and a little longer than the north end of the county."
+    columns={2}
+    items={[
+      {
+        title: 'Spring: storms and runoff',
+        description:
+          'Spring storms bring heavy rain and, with it, phosphates and organics washing in. Lewisville pools often need a post-storm correction that owners do not think to make.',
+        icon: 'tabler:cloud-storm',
+      },
+      {
+        title: 'Summer: the longest swim season we serve',
+        description:
+          'Being furthest south, Lewisville runs slightly warmer and the usable season stretches longer at both ends. That also means more weeks of high chlorine demand than up in Denton.',
+        icon: 'tabler:sun-high',
+      },
+      {
+        title: 'Fall: varies by neighborhood',
+        description:
+          'Established Lewisville neighborhoods have real tree cover and a real leaf load. Newer developments have very little. We set the fall rhythm based on your street rather than the city.',
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'Winter: shorter, but still freezes',
+        description:
+          'Lewisville generally sees slightly milder winter lows than Denton, but hard freezes still arrive and still damage equipment. Freeze prep matters here too.',
+        icon: 'tabler:snowflake',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Lewisville pool questions"
+    items={[
+      {
+        title: 'Do you service all of Lewisville?',
+        description:
+          'We cover Lewisville broadly, from Old Town through the newer neighborhoods. Call with your address and we will confirm your route day.',
+      },
+      {
+        title: 'I have a variable-speed pump. Does that change anything?',
+        description:
+          'It changes run times and how we think about turnover. Variable-speed pumps save real money but only if they run long enough at an effective speed. We will tell you if yours is set in a way that is working against your water.',
+      },
+      {
+        title: 'My pool is from the eighties and has not been touched in years.',
+        description:
+          'Common, and fixable. That usually starts as a green-to-clean or a deep clean rather than weekly service, so the ongoing work begins from a clean baseline.',
+      },
+      {
+        title: 'Can you work with my HOA requirements?',
+        description: 'Yes. Consistent weekly service is usually all it takes to stay well clear of any issue.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'Get a Free Quote', href: '/#contact' },
+      { text: 'Call 940-222-2308', href: 'tel:940-222-2308' },
+    ]}
+  >
+    <Fragment slot="title">Pool service in Lewisville</Fragment>
+    <Fragment slot="subtitle">Send us your address and a bit about the pool, and we'll quote it.</Fragment>
+  </CallToAction>
+</Layout>

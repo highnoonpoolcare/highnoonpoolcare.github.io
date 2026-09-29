@@ -1,0 +1,71 @@
+---
+// Per-page Service structured data.
+//
+// The site-wide LocalBusiness lists every service in its hasOfferCatalog, which
+// tells a crawler the business offers them but not that *this* page is about one
+// of them. This declares the page's own subject and points `provider` at the
+// business @id so the two graphs join up rather than describing two entities.
+//
+// Pass through PageLayout's head slot:
+//   <ServiceSchema slot="head" name="..." description="..." />
+
+export interface Props {
+  name: string;
+  description: string;
+  /** Page path, e.g. "/services/pool-cleaning". */
+  path: string;
+  /** Override the default service-area list when a service is narrower. */
+  areaServed?: string[];
+}
+
+const SITE = 'https://www.highnoonpoolcare.com';
+
+const DEFAULT_CITIES = [
+  'Corinth',
+  'Highland Village',
+  'Denton',
+  'Lewisville',
+  'Argyle',
+  'Ponder',
+  'Justin',
+  'Lake Dallas',
+  'Hickory Creek',
+  'Little Elm',
+  'Shady Shores',
+  'Cross Roads',
+  'Oak Point',
+  'Bartonville',
+  'Lantana',
+  'Double Oak',
+];
+
+const { name, description, path, areaServed = DEFAULT_CITIES } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${SITE}${path}#service`,
+  name,
+  description,
+  serviceType: name,
+  url: `${SITE}${path}`,
+  provider: {
+    '@type': 'LocalBusiness',
+    '@id': `${SITE}/#business`,
+    name: 'High Noon Pool Care',
+    telephone: '+1-940-222-2308',
+  },
+  areaServed: areaServed.map((city) => ({
+    '@type': 'City',
+    name: city,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: city,
+      addressRegion: 'TX',
+      addressCountry: 'US',
+    },
+  })),
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

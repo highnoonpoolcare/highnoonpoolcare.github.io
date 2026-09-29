@@ -1,0 +1,130 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ServiceSchema from '~/components/ServiceSchema.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Pool Filter Cleaning & Equipment Checks | Denton County, TX',
+  description:
+    'Cartridge, sand, and DE filter cleaning for North Texas pools, plus weekly equipment checks that catch small problems before they become repairs.',
+};
+---
+
+<Layout metadata={metadata}>
+  <ServiceSchema
+    slot="head"
+    name="Filter Cleaning"
+    description="Cartridge, sand, and DE pool filter cleaning or replacement, plus equipment checks that catch problems before they become repairs."
+    path="/services/filter-cleaning"
+  />
+
+  <HeroText
+    title="Filter Cleaning & Equipment Checks"
+    subtitle="Your filter is the difference between water that clears up and water that just stays cloudy no matter how many chemicals go in."
+    callToAction={{ variant: 'primary', text: 'Get a Free Quote', href: '/#contact' }}
+    callToAction2={{ text: 'Call 940-222-2308', href: 'tel:940-222-2308' }}
+  />
+
+  <Content
+    isReversed
+    tagline="Why It Matters"
+    title="Chemicals cannot fix bad circulation"
+    items={[
+      {
+        title: 'Pressure tells the story',
+        description:
+          'A filter reading eight to ten PSI above its clean baseline is already restricting flow. We track that every visit, so cleaning happens on condition rather than on guesswork.',
+      },
+      {
+        title: 'A starved pump is an expensive pump',
+        description:
+          'Restricted flow makes the motor work harder and run hotter. Motors are one of the priciest things on a pool pad, and most of them die early for preventable reasons.',
+      },
+      {
+        title: 'Turnover is what clears water',
+        description:
+          'After a shock or a green-to-clean, the filter is what physically removes dead algae. A clogged filter is why some pools stay cloudy for a week longer than they should.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hero_pool.png',
+      alt: 'Pool equipment and filtration',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">The least glamorous, most important part</h3>
+      Nobody buys a pool thinking about filtration. But when water will not clear, the filter is the first thing we look at
+      and usually the thing that was wrong.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features3
+    title="We service all three filter types"
+    columns={3}
+    items={[
+      {
+        title: 'Cartridge',
+        description:
+          'The most common setup on newer North Texas builds. Cartridges need pulling and deep cleaning on a schedule, and replacing every few years as the pleats break down.',
+        icon: 'tabler:filter',
+      },
+      {
+        title: 'Sand',
+        description:
+          'Simple and forgiving, but sand channels and hardens over time. Backwashing only goes so far; the media itself needs changing every several years.',
+        icon: 'tabler:mountain',
+      },
+      {
+        title: 'DE',
+        description:
+          'The finest filtration of the three and the most particular. Grids need cleaning and inspecting, and DE has to be recharged correctly after every backwash.',
+        icon: 'tabler:microscope',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Common questions"
+    items={[
+      {
+        title: 'How often should my filter be cleaned?',
+        description:
+          'Condition, not calendar. For most pools here that lands around every three to four months, more often through heavy pollen in spring and heavy leaf drop in fall. We go by filter pressure.',
+      },
+      {
+        title: 'Is backwashing the same as cleaning?',
+        description:
+          'No. Backwashing flushes loose debris from sand and DE filters, which helps but leaves oils and fine buildup behind. Cartridges cannot be backwashed at all and must be pulled and cleaned.',
+      },
+      {
+        title: 'Do you check the rest of the equipment?',
+        description:
+          'Every weekly visit includes a look at the pump, filter pressure, and visible plumbing. We are not a repair company, but we will tell you plainly when something needs attention and what we would do about it.',
+      },
+      {
+        title: 'What about freeze protection?',
+        description:
+          'Important here. North Texas gets a handful of hard freezes each winter, and equipment damage from those is one of the more expensive things that happens to local pools. We cover what to do ahead of a freeze and check equipment after one.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'Get a Free Quote', href: '/#contact' },
+      { text: 'Call 940-222-2308', href: 'tel:940-222-2308' },
+    ]}
+  >
+    <Fragment slot="title">Filter pressure creeping up?</Fragment>
+    <Fragment slot="subtitle">Get it handled before it turns into a pump replacement.</Fragment>
+  </CallToAction>
+</Layout>

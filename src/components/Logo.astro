@@ -1,11 +1,9 @@
 ---
-import { SITE } from 'astrowind:config';
 import logoImage from '~/assets/images/high-noon-pool-care-logo.png';
 ---
 
-<img src={logoImage.src} alt="High Noon Pool Care Logo" class="h-[150px] w-[150px] object-contain" />
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-xl md:text-lg font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  {SITE?.name}
-</span>
+{
+  /* Image only. The wordmark is already part of the logo artwork, so repeating
+    the site name beside it pushed the header wide enough to scroll sideways. */
+}
+<img src={logoImage.src} alt="High Noon Pool Care" class="h-[150px] w-[150px] object-contain" />

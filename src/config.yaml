@@ -29,35 +29,37 @@ i18n:
 
 apps:
   blog:
-    isEnabled: false
+    isEnabled: true
     postsPerPage: 6
 
     post:
-      isEnabled: false
-      permalink: '/%slug%'
+      isEnabled: true
+      permalink: '/blog/%slug%'
       robots:
-        index: false
+        index: true
 
     list:
-      isEnabled: false
+      isEnabled: true
       pathname: 'blog'
       robots:
-        index: false
+        index: true
 
     category:
-      isEnabled: false
+      isEnabled: true
       pathname: 'category'
       robots:
-        index: false
+        index: true
 
     tag:
-      isEnabled: false
+      isEnabled: true
       pathname: 'tag'
       robots:
+        # Tag archives are thin and near-duplicate; keep them crawlable but
+        # out of the index so they don't compete with posts and city pages.
         index: false
 
-    isRelatedPostsEnabled: false
-    relatedPostsCount: 4
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 3
 
 analytics:
   vendors:
